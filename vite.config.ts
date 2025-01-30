@@ -12,16 +12,8 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/',  // ✅ Ensures proper routing on Vercel
-  server: {
-    port: 5173, // ✅ Ensures local development runs on port 5173
-  },
+  base: '/',  // ✅ Ensures correct paths
   build: {
-    outDir: 'dist', // ✅ Default output folder for Vercel deployment
-  },
-  resolve: {
-    alias: {
-      '@': '/src', // ✅ Enables path aliasing
-    }
+    outDir: 'dist'  // ✅ Ensures Vercel serves from "dist"
   }
 });
